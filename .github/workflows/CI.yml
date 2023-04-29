@@ -8,26 +8,26 @@ on:
     
   workflow_dispatch:
   
-  jobs:
-    ci:
-      runs-on: ubuntu-latest
+jobs:
+  CI:
+    runs-on: ubuntu-latest
       
-      steps:
+    steps:
         
-        - name: Checkout repository
-          uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
           
-        - name: st up Node.js 16.x
-          uses: actions/setup-node@v3
-          with:
-            node-version: 16.x
+      - name: st up Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
             
-        - name: install dependecies
-          run: npm install
+      - name: install dependecies
+        run: npm install
        
-       - name: run the tests
-          run: npm run test -- --coverage
-          env:
-            ci: true
+      - name: run the tests
+        run: npm run test -- --coverage
+        env:
+          ci: true
       
       
